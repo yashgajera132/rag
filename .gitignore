@@ -1,0 +1,21 @@
+# Environments
+venv/
+.venv/
+env/
+ENV/
+
+# Sensitive data
+.env
+
+# FAISS Vector Store cache
+faiss_index_local/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# OS specific files
+.DS_Store
+Thumbs.db

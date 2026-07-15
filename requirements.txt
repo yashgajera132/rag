@@ -1,0 +1,13 @@
+langchain
+langchain-groq
+langchain-community
+langchain-huggingface
+langchain-text-splitters
+faiss-cpu
+pymupdf
+python-dotenv
+flask
+flask-cors
+streamlit
+requests
+sentence-transformers
