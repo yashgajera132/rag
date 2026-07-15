@@ -53,6 +53,54 @@ HARDCODED_PDF = "sample-20-page-pdf-a4-size.pdf"
 chat_history = []
 pdf_status = {"uploaded": True, "filename": HARDCODED_PDF, "index_info": "Loaded from local directory"}
 
+UPLOAD_FOLDER = "uploads"
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+
+@app.route("/api/upload", methods=["POST"])
+def upload_pdf():
+    """Upload a PDF dynamically and rebuild the RAG index."""
+    if 'file' not in request.files:
+        return jsonify({"error": "No file part in the request"}), 400
+    
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({"error": "No file selected"}), 400
+
+    if not file.filename.lower().endswith('.pdf'):
+        return jsonify({"error": "Only PDF files are allowed"}), 400
+
+    try:
+        # Save file to uploads folder
+        file_path = os.path.join(UPLOAD_FOLDER, file.filename)
+        file.save(file_path)
+        logger.info("📁 File saved to: %s", file_path)
+
+        # Force rebuild index from the new PDF
+        success = load_or_build_index(file_path, force_rebuild=True)
+        if not success:
+            return jsonify({"error": "Failed to index the uploaded PDF"}), 500
+
+        # Update pdf status and clear standard history logs
+        global pdf_status, chat_history
+        pdf_status = {
+            "uploaded": True,
+            "filename": file.filename,
+            "index_info": f"Indexed {file.filename} dynamically"
+        }
+        chat_history.clear()
+
+        logger.info("✅ PDF '%s' uploaded and indexed successfully", file.filename)
+        return jsonify({
+            "success": True,
+            "filename": file.filename,
+            "message": f"Successfully uploaded and indexed '{file.filename}'!"
+        })
+
+    except Exception as e:
+        logger.error("❌ Upload error: %s", str(e))
+        return jsonify({"error": f"Upload error: {str(e)}"}), 500
+
 
 @app.route("/api/ask", methods=["POST"])
 def ask_question():

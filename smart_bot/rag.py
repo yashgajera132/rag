@@ -8,6 +8,7 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_groq import ChatGroq
 from langchain_core.output_parsers import StrOutputParser
 from langchain.memory import ConversationBufferWindowMemory
+from sentence_transformers import CrossEncoder
 
 load_dotenv()
 
@@ -19,6 +20,9 @@ embeddings = HuggingFaceEmbeddings(
 
 vector_store = None
 
+# Initialize Cross-Encoder reranker globally
+reranker = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
+
 # Sliding window memory keeping the last 3 QA turns
 memory = ConversationBufferWindowMemory(
     k=3,
@@ -27,10 +31,10 @@ memory = ConversationBufferWindowMemory(
 )
 
 
-def load_or_build_index(pdf_path: str, save_dir: str = "faiss_index_local") -> bool:
+def load_or_build_index(pdf_path: str, save_dir: str = "faiss_index_local", force_rebuild: bool = False) -> bool:
     """Load FAISS index from disk if exists, otherwise create it from the PDF."""
     global vector_store
-    if os.path.exists(save_dir):
+    if not force_rebuild and os.path.exists(save_dir):
         try:
             vector_store = FAISS.load_local(
                 save_dir,
@@ -56,6 +60,9 @@ def load_or_build_index(pdf_path: str, save_dir: str = "faiss_index_local") -> b
     vector_store = FAISS.from_documents(documents=chunks, embedding=embeddings)
     vector_store.save_local(save_dir)
     print(f"[RAG] FAISS vector store built and saved to '{save_dir}'")
+    
+    # Clear chat history memory when rebuilding/uploading a new PDF
+    clear_rag()
     return True
 
 
@@ -68,17 +75,25 @@ def ask_rag(question: str) -> dict:
             "sources": []
         }
 
-    # Similarity search
-    retrieved_docs = vector_store.similarity_search(question, k=3)
+    # Similarity search (Retrieve k=8 candidates)
+    retrieved_docs = vector_store.similarity_search(question, k=8)
     if not retrieved_docs:
         return {
             "answer": "I couldn't find any relevant context in the PDF to answer this.",
             "sources": []
         }
 
+    # Reranking using Cross-Encoder
+    pairs = [(question, doc.page_content) for doc in retrieved_docs]
+    scores = reranker.predict(pairs)
+    
+    # Sort docs by score descending and take top 3
+    scored_docs = sorted(zip(retrieved_docs, scores), key=lambda x: x[1], reverse=True)
+    reranked_docs = [doc for doc, score in scored_docs[:3]]
+
     context_text = "\n\n".join(
         f"[Page {doc.metadata.get('page', '?')}]\n{doc.page_content}"
-        for doc in retrieved_docs
+        for doc in reranked_docs
     )
 
     # Initialize model
@@ -121,7 +136,7 @@ def ask_rag(question: str) -> dict:
             "page": doc.metadata.get("page", 0) + 1,
             "content": doc.page_content
         }
-        for doc in retrieved_docs
+        for doc in reranked_docs
     ]
 
     return {

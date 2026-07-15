@@ -136,8 +136,33 @@ if "pdf_filename" not in st.session_state:
 # ---------- Sidebar ----------
 with st.sidebar:
     st.markdown("## 📄 Document Q&A")
-    st.markdown("Ask questions about the preloaded PDF document.")
+    st.markdown("Upload a PDF and ask questions dynamically.")
     
+    st.markdown("---")
+    
+    # File Uploader
+    uploaded_file = st.file_uploader("Upload a PDF file", type=["pdf"])
+    
+    if uploaded_file is not None:
+        # Check if the uploaded file is different from the active one
+        if uploaded_file.name != st.session_state.pdf_filename:
+            with st.spinner(f"Indexing {uploaded_file.name}..."):
+                try:
+                    files = {"file": (uploaded_file.name, uploaded_file.getvalue(), "application/pdf")}
+                    response = requests.post(f"{FLASK_URL}/api/upload", files=files, timeout=120)
+                    
+                    if response.status_code == 200:
+                        st.session_state.pdf_filename = uploaded_file.name
+                        st.session_state.pdf_uploaded = True
+                        st.session_state.messages = []  # Reset chat history for new PDF
+                        st.toast(f"✅ Loaded {uploaded_file.name} successfully!")
+                        st.rerun()
+                    else:
+                        error_msg = response.json().get("error", "Unknown error")
+                        st.error(f"❌ Upload failed: {error_msg}")
+                except Exception as e:
+                    st.error(f"❌ Connection error: {str(e)}")
+
     st.markdown("---")
     st.markdown(f"📎 **Active PDF:** `{st.session_state.pdf_filename}`")
 
