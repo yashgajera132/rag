@@ -11,3 +11,4 @@ flask-cors
 streamlit
 requests
 sentence-transformers
+rank_bm25

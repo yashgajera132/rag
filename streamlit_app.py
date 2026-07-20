@@ -14,9 +14,10 @@
 
 import streamlit as st
 import requests
+import config
 
 # ---------- Configuration ----------
-FLASK_URL = "http://localhost:5000"
+FLASK_URL = config.FLASK_URL
 
 # ---------- Page Config ----------
 st.set_page_config(
@@ -130,7 +131,7 @@ if "messages" not in st.session_state:
 if "pdf_uploaded" not in st.session_state:
     st.session_state.pdf_uploaded = True
 if "pdf_filename" not in st.session_state:
-    st.session_state.pdf_filename = "sample-20-page-pdf-a4-size.pdf"
+    st.session_state.pdf_filename = config.DEFAULT_PDF
 
 
 # ---------- Sidebar ----------

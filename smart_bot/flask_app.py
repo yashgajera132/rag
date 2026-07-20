@@ -1,11 +1,17 @@
 import os
 import logging
 import time
+import sys
+from pathlib import Path
 from flask import Flask, request, jsonify, g
 from flask_cors import CORS
-from dotenv import load_dotenv
 
-load_dotenv()
+# Add root directory to sys.path so config can be imported regardless of execution context
+try:
+    import config
+except ModuleNotFoundError:
+    sys.path.append(str(Path(__file__).resolve().parents[1]))
+    import config
 
 from smart_bot.rag import ask_rag, clear_rag, load_or_build_index, get_memory_contents
 
@@ -49,12 +55,15 @@ def log_request_end(response):
 
 
 # ---------- Configuration & State ----------
-HARDCODED_PDF = "sample-20-page-pdf-a4-size.pdf"
+HARDCODED_PDF = config.DEFAULT_PDF
 chat_history = []
 pdf_status = {"uploaded": True, "filename": HARDCODED_PDF, "index_info": "Loaded from local directory"}
 
-UPLOAD_FOLDER = "uploads"
+UPLOAD_FOLDER = config.UPLOAD_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+# Load existing index on startup; if none exists, build it
+load_or_build_index(HARDCODED_PDF)
 
 
 @app.route("/api/upload", methods=["POST"])
@@ -154,12 +163,9 @@ def clear_all():
 
 
 if __name__ == "__main__":
-    # Try to load existing index on startup; if none exists, build it
-    load_or_build_index(HARDCODED_PDF)
-
     print("\n" + "=" * 50)
     print(" Smart PDF Q&A Bot — Flask Backend")
-    print(" Running on http://localhost:5000")
+    print(f" Running on http://{config.FLASK_HOST}:{config.FLASK_PORT}")
     print("=" * 50 + "\n")
 
-    app.run(debug=True, port=5000)
+    app.run(debug=True, host=config.FLASK_HOST, port=config.FLASK_PORT)

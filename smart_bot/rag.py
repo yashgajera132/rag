@@ -1,39 +1,49 @@
 import os
-from dotenv import load_dotenv
+import sys
+from pathlib import Path
+
+# Add root directory to sys.path so config can be imported regardless of execution context
+try:
+    import config
+except ModuleNotFoundError:
+    sys.path.append(str(Path(__file__).resolve().parents[1]))
+    import config
+
 from langchain_community.document_loaders import PyMuPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
+from langchain_community.retrievers import BM25Retriever
+from langchain.retrievers import EnsembleRetriever
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langchain_groq import ChatGroq
+from langchain_ollama import ChatOllama
 from langchain_core.output_parsers import StrOutputParser
 from langchain.memory import ConversationBufferWindowMemory
 from sentence_transformers import CrossEncoder
 
-load_dotenv()
-
 # Embedding model shared for index building and retrieval
 embeddings = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2",
-    encode_kwargs={"normalize_embeddings": False}
+    model_name=config.EMBEDDING_MODEL_NAME,
+    encode_kwargs={"normalize_embeddings": config.EMBEDDING_NORMALIZE}
 )
 
 vector_store = None
+bm25_retriever = None
 
 # Initialize Cross-Encoder reranker globally
-reranker = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
+reranker = CrossEncoder(config.RERANKER_MODEL_NAME)
 
 # Sliding window memory keeping the last 3 QA turns
 memory = ConversationBufferWindowMemory(
-    k=3,
+    k=config.MEMORY_WINDOW_SIZE,
     memory_key="chat_history",
     return_messages=True
 )
 
 
-def load_or_build_index(pdf_path: str, save_dir: str = "faiss_index_local", force_rebuild: bool = False) -> bool:
-    """Load FAISS index from disk if exists, otherwise create it from the PDF."""
-    global vector_store
+def load_or_build_index(pdf_path: str, save_dir: str = config.FAISS_INDEX_DIR, force_rebuild: bool = False) -> bool:
+    """Load FAISS index and BM25 retriever from disk/memory if exists, otherwise create them from the PDF."""
+    global vector_store, bm25_retriever
     if not force_rebuild and os.path.exists(save_dir):
         try:
             vector_store = FAISS.load_local(
@@ -41,7 +51,11 @@ def load_or_build_index(pdf_path: str, save_dir: str = "faiss_index_local", forc
                 embeddings,
                 allow_dangerous_deserialization=True
             )
-            print(f"[RAG] Loaded FAISS index from local directory '{save_dir}'")
+            # Reconstruct BM25Retriever from local FAISS docstore
+            chunks = list(vector_store.docstore._dict.values())
+            bm25_retriever = BM25Retriever.from_documents(chunks)
+            bm25_retriever.k = config.RETRIEVER_K
+            print(f"[RAG] Loaded FAISS index and initialized BM25 retriever from local directory '{save_dir}'")
             return True
         except Exception as e:
             print(f"[RAG] Error loading local index: {e}")
@@ -59,7 +73,11 @@ def load_or_build_index(pdf_path: str, save_dir: str = "faiss_index_local", forc
 
     vector_store = FAISS.from_documents(documents=chunks, embedding=embeddings)
     vector_store.save_local(save_dir)
-    print(f"[RAG] FAISS vector store built and saved to '{save_dir}'")
+    
+    # Initialize BM25Retriever
+    bm25_retriever = BM25Retriever.from_documents(chunks)
+    bm25_retriever.k = config.RETRIEVER_K
+    print(f"[RAG] FAISS vector store built, BM25 retriever initialized, and saved to '{save_dir}'")
     
     # Clear chat history memory when rebuilding/uploading a new PDF
     clear_rag()
@@ -67,16 +85,25 @@ def load_or_build_index(pdf_path: str, save_dir: str = "faiss_index_local", forc
 
 
 def ask_rag(question: str) -> dict:
-    """Execute query over FAISS store and LLM with chat history memory context."""
-    global vector_store, memory
-    if vector_store is None:
+    """Execute query over FAISS/BM25 stores and LLM with chat history memory context."""
+    global vector_store, bm25_retriever, memory
+    if vector_store is None or bm25_retriever is None:
         return {
             "answer": "No PDF has been uploaded/indexed yet.",
             "sources": []
         }
 
-    # Similarity search (Retrieve k=8 candidates)
-    retrieved_docs = vector_store.similarity_search(question, k=8)
+    # FAISS dense retriever
+    faiss_retriever = vector_store.as_retriever(search_kwargs={"k": config.RETRIEVER_K})
+
+    # Ensemble retriever (Hybrid Search)
+    ensemble_retriever = EnsembleRetriever(
+        retrievers=[faiss_retriever, bm25_retriever],
+        weights=config.ENSEMBLE_WEIGHTS
+    )
+
+    # Hybrid Search (Retrieve candidates)
+    retrieved_docs = ensemble_retriever.invoke(question)
     if not retrieved_docs:
         return {
             "answer": "I couldn't find any relevant context in the PDF to answer this.",
@@ -89,7 +116,7 @@ def ask_rag(question: str) -> dict:
     
     # Sort docs by score descending and take top 3
     scored_docs = sorted(zip(retrieved_docs, scores), key=lambda x: x[1], reverse=True)
-    reranked_docs = [doc for doc, score in scored_docs[:3]]
+    reranked_docs = [doc for doc, score in scored_docs[:config.RERANK_TOP_K]]
 
     context_text = "\n\n".join(
         f"[Page {doc.metadata.get('page', '?')}]\n{doc.page_content}"
@@ -97,21 +124,29 @@ def ask_rag(question: str) -> dict:
     )
 
     # Initialize model
-    llm = ChatGroq(
-        model=os.environ.get("GROQ_MODEL", "llama-3.1-8b-instant"),
-        groq_api_key=os.environ.get("GROQ_API_KEY")
+    llm = ChatOllama(
+        model=config.OLLAMA_MODEL
     )
 
     # Compile prompt with memory support
     prompt = ChatPromptTemplate.from_messages([
-        (
-            "system",
-            "You are a helpful assistant. Use ONLY the provided context blocks to answer the question. "
-            "If the answer cannot be found in the context blocks, say you don't know.\n\n"
-            "Context from PDF:\n{context}"
-        ),
-        MessagesPlaceholder(variable_name="chat_history"),
-        ("human", "{question}")
+    (
+        "system",
+        "You are a precise document-analysis assistant. Answer the user's question using ONLY "
+        "the information present in the context blocks below, extracted from a PDF document.\n\n"
+        "Rules:\n"
+        "1. Base your answer strictly on the provided context. Do not use outside knowledge.\n"
+        "2. If the answer is not present in the context, respond exactly with: "
+        "\"I don't know based on the provided document.\"\n"
+        "3. If the context is only partially relevant, answer what is supported and state what is missing.\n"
+        "4. Do not guess, infer beyond what is stated, or fabricate numbers, names, or facts.\n"
+        "5. If context blocks conflict, mention the conflict instead of silently picking one.\n"
+        "6. Keep answers concise — do not repeat the context verbatim.\n"
+        "7. If the question asks for a list, table, or specific format, follow that format exactly.\n\n"
+        "Context from PDF:\n{context}"
+    ),
+    MessagesPlaceholder(variable_name="chat_history"),
+    ("human", "{question}")
     ])
 
     chain = prompt | llm | StrOutputParser()
@@ -143,6 +178,7 @@ def ask_rag(question: str) -> dict:
         "answer": answer,
         "sources": sources
     }
+
 
 
 def clear_rag():
