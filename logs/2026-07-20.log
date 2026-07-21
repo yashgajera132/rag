@@ -1,0 +1,205 @@
+2026-07-20 14:52:22 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 14:52:44 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 14:53:11 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 14:53:31 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 55
+2026-07-20 14:53:31 | INFO    | Question: What terms are defined in the Glossary?
+2026-07-20 14:53:31 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 14:54:38 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 48
+2026-07-20 14:54:38 | INFO    | Question: Which are the Glossary of Terms?
+2026-07-20 14:54:45 | INFO    | Memory Window: [{'type': 'human', 'content': 'What terms are defined in the Glossary?'}, {'type': 'ai', 'content': 'The glossary defines the following terms: Annotation, Bookmark, Content Stream, Digital Signature, Embedded Font, Linearization, OCR, and Tagged PDF.'}]
+2026-07-20 14:54:45 | INFO    | Answer generated successfully
+2026-07-20 14:54:45 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 73.80s
+2026-07-20 14:56:10 | INFO    | Memory Window: [{'type': 'human', 'content': 'What terms are defined in the Glossary?'}, {'type': 'ai', 'content': 'The glossary defines the following terms: Annotation, Bookmark, Content Stream, Digital Signature, Embedded Font, Linearization, OCR, and Tagged PDF.'}, {'type': 'human', 'content': 'Which are the Glossary of Terms?'}, {'type': 'ai', 'content': "Annotation — A comment, highlight, or markup overlaid on a PDF page, stored separately from page content.\nBookmark — A named destination in the document outline for quick navigation to a specific location.\nContent Stream — Operators and operands that define the visual content of a PDF page.\nDigital Signature — A cryptographic mechanism verifying the signer's identity and document integrity.\nEmbedded Font — A font included within the PDF so text renders correctly on any system.\nLinearization — An optimization allowing the first page to display before the full file downloads.\nOCR — Optical Character Recognition: converting images of text into searchable text.\nTagged PDF — A PDF with structural tags for reading order and accessibility compliance."}]
+2026-07-20 14:56:10 | INFO    | Answer generated successfully
+2026-07-20 14:56:10 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 91.75s
+2026-07-20 14:57:37 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 14:57:37 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 14:58:19 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 14:58:22 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 14:58:45 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 48
+2026-07-20 14:58:45 | INFO    | Question: Which are the Glossary of Terms?
+2026-07-20 14:58:48 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 14:59:54 | INFO    | Memory Window: [{'type': 'human', 'content': 'Which are the Glossary of Terms?'}, {'type': 'ai', 'content': 'The glossary defines 8 terms:'}]
+2026-07-20 14:59:54 | INFO    | Answer generated successfully
+2026-07-20 14:59:54 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 68.84s
+2026-07-20 15:03:00 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 15:03:24 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 15:03:49 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 48
+2026-07-20 15:03:49 | INFO    | Question: Which are the Glossary of Terms?
+2026-07-20 15:04:56 | INFO    | Memory Window: [{'type': 'human', 'content': 'Which are the Glossary of Terms?'}, {'type': 'ai', 'content': 'The glossary defines 8 terms:'}]
+2026-07-20 15:04:56 | INFO    | Answer generated successfully
+2026-07-20 15:04:56 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 67.12s
+2026-07-20 15:06:51 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 15:07:23 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 15:07:23 | INFO    | ============================================================
+2026-07-20 15:07:23 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-20 15:07:23 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-20 15:07:23 | INFO    | ============================================================
+2026-07-20 15:07:28 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 29
+2026-07-20 15:07:28 | INFO    | Question: What is OCR ?
+2026-07-20 15:08:09 | INFO    | Token Usage | Input: 1051 | Output: 37 | Total: 1088
+2026-07-20 15:08:09 | INFO    | Memory Window: [{'type': 'human', 'content': 'What is OCR ?'}, {'type': 'ai', 'content': 'OCR — Optical Character Recognition: converting images of text into searchable text.'}]
+2026-07-20 15:08:09 | INFO    | Answer generated successfully
+2026-07-20 15:08:09 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 41.12s
+2026-07-20 15:10:12 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 45
+2026-07-20 15:10:12 | INFO    | Question: give me table of the content 
+2026-07-20 15:11:18 | INFO    | Token Usage | Input: 1091 | Output: 305 | Total: 1396
+2026-07-20 15:11:18 | INFO    | Memory Window: [{'type': 'human', 'content': 'What is OCR ?'}, {'type': 'ai', 'content': 'OCR — Optical Character Recognition: converting images of text into searchable text.'}, {'type': 'human', 'content': 'give me table of the content '}, {'type': 'ai', 'content': "Here is a table of the PDF's content:"}]
+2026-07-20 15:11:18 | INFO    | Answer generated successfully
+2026-07-20 15:11:18 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 65.39s
+2026-07-20 15:29:50 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 15:29:50 | INFO    | ============================================================
+2026-07-20 15:29:50 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-20 15:29:50 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-20 15:29:50 | INFO    | ============================================================
+2026-07-20 15:30:29 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 15:30:29 | INFO    | ============================================================
+2026-07-20 15:30:29 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-20 15:30:29 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-20 15:30:29 | INFO    | ============================================================
+2026-07-20 15:39:57 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 15:39:57 | INFO    | ============================================================
+2026-07-20 15:39:57 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-20 15:39:57 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-20 15:39:57 | INFO    | ============================================================
+2026-07-20 15:42:50 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 64
+2026-07-20 15:42:50 | INFO    | Question: give me all HTTPS status code with descriptions 
+2026-07-20 15:43:53 | INFO    | Token Usage | Input: 1281 | Output: 110 | Total: 1391
+2026-07-20 15:43:53 | INFO    | Memory Window: [{'type': 'human', 'content': 'give me all HTTPS status code with descriptions '}, {'type': 'ai', 'content': 'The document lists the following HTTP status codes with their descriptions: 200 OK, 201 Created, 301 Moved Permanently, 302 Found, 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 500 Internal Server Error, 502 Bad Gateway, and 503 Service Unavailable.'}]
+2026-07-20 15:43:53 | INFO    | Answer generated successfully
+2026-07-20 15:43:53 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 63.11s
+2026-07-20 15:48:33 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 49
+2026-07-20 15:48:33 | INFO    | Question: tail me about Compression methods
+2026-07-20 15:49:27 | INFO    | Token Usage | Input: 1225 | Output: 101 | Total: 1326
+2026-07-20 15:49:27 | INFO    | Memory Window: [{'type': 'human', 'content': 'give me all HTTPS status code with descriptions '}, {'type': 'ai', 'content': 'The document lists the following HTTP status codes with their descriptions: 200 OK, 201 Created, 301 Moved Permanently, 302 Found, 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 500 Internal Server Error, 502 Bad Gateway, and 503 Service Unavailable.'}, {'type': 'human', 'content': 'tail me about Compression methods'}, {'type': 'ai', 'content': 'PDF files use various compression algorithms to reduce file size. FlateDecode (based on zlib/deflate) is the most common general-purpose compression. DCTDecode uses JPEG compression for photographic images. JBIG2Decode provides efficient compression for bilevel (black and white) images. JPXDecode uses JPEG 2000 for images requiring both lossy and lossless options.'}]
+2026-07-20 15:49:27 | INFO    | Answer generated successfully
+2026-07-20 15:49:27 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 53.85s
+2026-07-20 15:54:12 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 71
+2026-07-20 15:54:12 | INFO    | Question: what is the page views in May month in website traffic?
+2026-07-20 15:55:19 | INFO    | Token Usage | Input: 1747 | Output: 12 | Total: 1759
+2026-07-20 15:55:19 | WARNING | JSON parse failed (Invalid json output: I don't know based on the provided document.
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE ), falling back to raw content.
+2026-07-20 15:55:19 | INFO    | Memory Window: [{'type': 'human', 'content': 'give me all HTTPS status code with descriptions '}, {'type': 'ai', 'content': 'The document lists the following HTTP status codes with their descriptions: 200 OK, 201 Created, 301 Moved Permanently, 302 Found, 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 500 Internal Server Error, 502 Bad Gateway, and 503 Service Unavailable.'}, {'type': 'human', 'content': 'tail me about Compression methods'}, {'type': 'ai', 'content': 'PDF files use various compression algorithms to reduce file size. FlateDecode (based on zlib/deflate) is the most common general-purpose compression. DCTDecode uses JPEG compression for photographic images. JBIG2Decode provides efficient compression for bilevel (black and white) images. JPXDecode uses JPEG 2000 for images requiring both lossy and lossless options.'}, {'type': 'human', 'content': 'what is the page views in May month in website traffic?'}, {'type': 'ai', 'content': "I don't know based on the provided document."}]
+2026-07-20 15:55:19 | INFO    | Answer generated successfully
+2026-07-20 15:55:19 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 66.97s
+2026-07-20 15:58:54 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 15:58:54 | INFO    | ============================================================
+2026-07-20 15:58:54 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-20 15:58:54 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-20 15:58:54 | INFO    | ============================================================
+2026-07-20 16:00:27 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 16:00:27 | INFO    | ============================================================
+2026-07-20 16:00:27 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-20 16:00:27 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-20 16:00:27 | INFO    | ============================================================
+2026-07-20 16:05:56 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 16:05:56 | INFO    | ============================================================
+2026-07-20 16:05:56 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-20 16:05:56 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-20 16:05:56 | INFO    | ============================================================
+2026-07-20 16:05:56 | INFO    | REQUEST  | GET /api/history | IP: 127.0.0.1 | Body: 0
+2026-07-20 16:05:56 | INFO    | RESPONSE | GET /api/history | Status: 200 | Duration: 0.00s
+2026-07-20 16:06:44 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 16:06:44 | INFO    | ============================================================
+2026-07-20 16:06:44 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-20 16:06:44 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-20 16:06:44 | INFO    | ============================================================
+2026-07-20 16:07:04 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 16:07:04 | INFO    | ============================================================
+2026-07-20 16:07:04 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-20 16:07:04 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-20 16:07:04 | INFO    | ============================================================
+2026-07-20 16:09:36 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 16:09:36 | INFO    | ============================================================
+2026-07-20 16:09:36 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-20 16:09:36 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-20 16:09:36 | INFO    | ============================================================
+2026-07-20 16:09:36 | INFO    | REQUEST  | GET /api/history | IP: 127.0.0.1 | Body: 0
+2026-07-20 16:09:36 | INFO    | RESPONSE | GET /api/history | Status: 200 | Duration: 0.00s
+2026-07-20 16:16:15 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 16:16:15 | INFO    | ============================================================
+2026-07-20 16:16:15 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-20 16:16:15 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-20 16:16:15 | INFO    | ============================================================
+2026-07-20 16:16:15 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 30
+2026-07-20 16:16:15 | INFO    | RESPONSE | POST /api/ask | Status: 400 | Duration: 0.00s
+2026-07-20 16:16:38 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 16:16:38 | INFO    | ============================================================
+2026-07-20 16:16:38 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-20 16:16:38 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-20 16:16:38 | INFO    | ============================================================
+2026-07-20 16:16:38 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 29
+2026-07-20 16:16:38 | INFO    | Question: What is OCR ?
+2026-07-20 16:16:38 | INFO    | Hybrid search retrieved 14 chunks in 0.050s
+2026-07-20 16:16:39 | INFO    | Reranking selected top 3 chunks in 0.981s. Scores: 2.842, 1.904, -5.652. Page(s): 19, 19, 9
+2026-07-20 16:17:14 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 29
+2026-07-20 16:17:14 | INFO    | Question: what is ocr ?
+2026-07-20 16:17:14 | INFO    | Hybrid search retrieved 16 chunks in 0.020s
+2026-07-20 16:17:16 | INFO    | Reranking selected top 3 chunks in 1.853s. Scores: 2.842, 1.904, -5.652. Page(s): 19, 19, 9
+2026-07-20 16:17:28 | INFO    | LLM generation completed in 48.402s
+2026-07-20 16:17:28 | INFO    | Token Usage | Input: 1051 | Output: 37 | Total: 1088
+2026-07-20 16:17:28 | INFO    | Memory Window: [{'type': 'human', 'content': 'What is OCR ?'}, {'type': 'ai', 'content': 'OCR — Optical Character Recognition: converting images of text into searchable text.'}]
+2026-07-20 16:17:28 | INFO    | Answer generated successfully
+2026-07-20 16:17:28 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 49.44s
+2026-07-20 16:18:15 | INFO    | LLM generation completed in 58.862s
+2026-07-20 16:18:15 | INFO    | Token Usage | Input: 1052 | Output: 37 | Total: 1089
+2026-07-20 16:18:15 | INFO    | Memory Window: [{'type': 'human', 'content': 'What is OCR ?'}, {'type': 'ai', 'content': 'OCR — Optical Character Recognition: converting images of text into searchable text.'}, {'type': 'human', 'content': 'what is ocr ?'}, {'type': 'ai', 'content': 'OCR — Optical Character Recognition: converting images of text into searchable text.'}]
+2026-07-20 16:18:15 | INFO    | Answer generated successfully
+2026-07-20 16:18:15 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 60.76s
+2026-07-20 16:22:29 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 16:22:29 | INFO    | ============================================================
+2026-07-20 16:22:29 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-20 16:22:29 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-20 16:22:29 | INFO    | ============================================================
+2026-07-20 16:23:12 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 16:23:12 | INFO    | ============================================================
+2026-07-20 16:23:12 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-20 16:23:12 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-20 16:23:12 | INFO    | ============================================================
+2026-07-20 16:23:38 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 16:23:38 | INFO    | ============================================================
+2026-07-20 16:23:38 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-20 16:23:38 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-20 16:23:38 | INFO    | ============================================================
+2026-07-20 16:23:58 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 29
+2026-07-20 16:23:58 | INFO    | Question: what is OCR ?
+2026-07-20 16:23:58 | INFO    | Hybrid search retrieved 14 chunks in 0.061s
+2026-07-20 16:23:59 | INFO    | Reranking selected top 3 chunks in 1.002s. Scores: 2.842, 1.904, -5.652. Page(s): 19, 19, 9
+2026-07-20 16:24:46 | INFO    | LLM generation completed in 46.863s
+2026-07-20 16:24:46 | INFO    | Token Usage | Input: 1051 | Output: 37 | Total: 1088
+2026-07-20 16:24:46 | INFO    | Memory Window: [{'type': 'human', 'content': 'what is OCR ?'}, {'type': 'ai', 'content': 'OCR — Optical Character Recognition: converting images of text into searchable text.'}]
+2026-07-20 16:24:46 | INFO    | Answer generated successfully
+2026-07-20 16:24:46 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 47.95s
+2026-07-20 16:30:43 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-20 16:30:43 | INFO    | ============================================================
+2026-07-20 16:30:43 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-20 16:30:43 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-20 16:30:43 | INFO    | ============================================================
+2026-07-20 16:30:44 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 29
+2026-07-20 16:30:44 | INFO    | Question: What is OCR ?
+2026-07-20 16:30:44 | INFO    | Hybrid search retrieved 14 chunks in 0.042s
+2026-07-20 16:30:44 | INFO    | Reranking selected top 3 chunks in 0.916s. Scores: 2.842 (94.49%), 1.904 (87.04%), -5.652 (0.35%). Page(s): 19, 19, 9
+2026-07-20 16:31:31 | INFO    | LLM generation completed in 46.595s
+2026-07-20 16:31:31 | INFO    | Token Usage | Input: 1051 | Output: 35 | Total: 1086
+2026-07-20 16:31:31 | INFO    | Memory Window: [{'type': 'human', 'content': 'What is OCR ?'}, {'type': 'ai', 'content': 'OCR — Optical Character Recognition: converting images of text into searchable text.'}]
+2026-07-20 16:31:31 | INFO    | Answer generated successfully
+2026-07-20 16:31:31 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 47.56s
+2026-07-20 16:32:31 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 31
+2026-07-20 16:32:31 | INFO    | Question: 
+what is OCR ?
+2026-07-20 16:32:31 | INFO    | Hybrid search retrieved 14 chunks in 0.030s
+2026-07-20 16:32:32 | INFO    | Reranking selected top 3 chunks in 1.092s. Scores: 2.842 (94.49%), 1.904 (87.04%), -5.652 (0.35%). Page(s): 19, 19, 9
+2026-07-20 16:33:16 | INFO    | LLM generation completed in 43.880s
+2026-07-20 16:33:16 | INFO    | Token Usage | Input: 1079 | Output: 37 | Total: 1116
+2026-07-20 16:33:16 | INFO    | Memory Window: [{'type': 'human', 'content': 'What is OCR ?'}, {'type': 'ai', 'content': 'OCR — Optical Character Recognition: converting images of text into searchable text.'}, {'type': 'human', 'content': '\nwhat is OCR ?'}, {'type': 'ai', 'content': 'OCR — Optical Character Recognition: converting images of text into searchable text.'}]
+2026-07-20 16:33:16 | INFO    | Answer generated successfully
+2026-07-20 16:33:16 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 45.02s
+2026-07-20 16:37:35 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 45
+2026-07-20 16:37:35 | INFO    | Question: give me table of the content 
+2026-07-20 16:37:35 | INFO    | Hybrid search retrieved 14 chunks in 0.042s
+2026-07-20 16:37:41 | INFO    | Reranking selected top 3 chunks in 5.646s. Scores: -3.362 (3.35%), -4.342 (1.28%), -4.415 (1.19%). Page(s): 2, 16, 6
+2026-07-20 16:38:51 | INFO    | LLM generation completed in 70.178s
+2026-07-20 16:38:51 | INFO    | Token Usage | Input: 1119 | Output: 330 | Total: 1449
+2026-07-20 16:38:51 | INFO    | Memory Window: [{'type': 'human', 'content': 'What is OCR ?'}, {'type': 'ai', 'content': 'OCR — Optical Character Recognition: converting images of text into searchable text.'}, {'type': 'human', 'content': '\nwhat is OCR ?'}, {'type': 'ai', 'content': 'OCR — Optical Character Recognition: converting images of text into searchable text.'}, {'type': 'human', 'content': 'give me table of the content '}, {'type': 'ai', 'content': 'The PDF contains the following sections: Introduction, Text Formatting, Lists, Tables, Technical Content, Charts, Extended Prose, Appendix, Glossary, and About Sample-Files.com.'}]
+2026-07-20 16:38:51 | INFO    | Answer generated successfully
+2026-07-20 16:38:51 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 75.93s

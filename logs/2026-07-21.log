@@ -1,0 +1,285 @@
+2026-07-21 10:38:26 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 10:38:26 | INFO    | ============================================================
+2026-07-21 10:38:26 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 10:38:26 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 10:38:26 | INFO    | ============================================================
+2026-07-21 10:38:50 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 10:38:50 | INFO    | ============================================================
+2026-07-21 10:38:50 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 10:38:50 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 10:38:50 | INFO    | ============================================================
+2026-07-21 10:40:41 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 10:40:41 | INFO    | ============================================================
+2026-07-21 10:40:41 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 10:40:41 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 10:40:41 | INFO    | ============================================================
+2026-07-21 10:41:23 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 10:41:23 | INFO    | ============================================================
+2026-07-21 10:41:23 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 10:41:23 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 10:41:23 | INFO    | ============================================================
+2026-07-21 10:44:22 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 29
+2026-07-21 10:44:22 | INFO    | Question: What is OCR ?
+2026-07-21 10:44:22 | INFO    | Hybrid search retrieved 14 chunks in 0.373s
+2026-07-21 10:44:24 | INFO    | Reranking selected top 3 chunks in 2.276s. Scores: 2.842 (94.49%), 1.904 (87.04%), -5.652 (0.35%). Page(s): 19, 19, 9
+2026-07-21 10:45:32 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 10:45:32 | INFO    | ============================================================
+2026-07-21 10:45:32 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 10:45:32 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 10:45:32 | INFO    | ============================================================
+2026-07-21 10:46:25 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 10:46:25 | INFO    | ============================================================
+2026-07-21 10:46:25 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 10:46:25 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 10:46:25 | INFO    | ============================================================
+2026-07-21 10:49:29 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 10:49:29 | INFO    | ============================================================
+2026-07-21 10:49:29 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 10:49:29 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 10:49:29 | INFO    | ============================================================
+2026-07-21 10:50:20 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 10:50:20 | INFO    | ============================================================
+2026-07-21 10:50:20 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 10:50:20 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 10:50:20 | INFO    | ============================================================
+2026-07-21 10:50:20 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 28
+2026-07-21 10:50:20 | INFO    | Question: What is OCR?
+2026-07-21 10:50:20 | INFO    | Hybrid search retrieved 16 chunks in 0.365s
+2026-07-21 10:50:22 | INFO    | Reranking selected top 3 chunks in 1.635s. Scores: 2.842 (94.49%), 1.904 (87.04%), -5.652 (0.35%). Page(s): 19, 19, 9
+2026-07-21 10:50:22 | INFO    | Generation attempt 1 of 3
+2026-07-21 10:50:53 | INFO    | LLM generation completed in 30.833s for attempt 1
+2026-07-21 10:50:53 | INFO    | Validation result for attempt 1 | Passed: False | Score: 0.470 | Threshold: 0.750
+2026-07-21 10:50:53 | INFO    | Generation attempt 2 of 3
+2026-07-21 10:51:02 | INFO    | LLM generation completed in 8.681s for attempt 2
+2026-07-21 10:51:02 | INFO    | Validation result for attempt 2 | Passed: False | Score: 0.470 | Threshold: 0.750
+2026-07-21 10:51:02 | INFO    | Generation attempt 3 of 3
+2026-07-21 10:51:08 | INFO    | LLM generation completed in 6.033s for attempt 3
+2026-07-21 10:51:08 | INFO    | Validation result for attempt 3 | Passed: False | Score: 0.470 | Threshold: 0.750
+2026-07-21 10:51:08 | INFO    | Memory Window: [{'type': 'human', 'content': 'What is OCR?'}, {'type': 'ai', 'content': 'OCR — Optical Character Recognition: converting images of text into searchable text.'}]
+2026-07-21 10:51:08 | INFO    | Answer generated successfully (Validation: {'passed': False, 'score': 0.47, 'attempts': 3, 'threshold': 0.75})
+2026-07-21 10:51:08 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 47.96s
+2026-07-21 10:51:31 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 29
+2026-07-21 10:51:31 | INFO    | Question: What is OCR ?
+2026-07-21 10:51:31 | INFO    | Hybrid search retrieved 14 chunks in 0.018s
+2026-07-21 10:51:33 | INFO    | Reranking selected top 3 chunks in 1.461s. Scores: 2.842 (94.49%), 1.904 (87.04%), -5.652 (0.35%). Page(s): 19, 19, 9
+2026-07-21 10:51:33 | INFO    | Generation attempt 1 of 3
+2026-07-21 10:51:44 | INFO    | LLM generation completed in 10.775s for attempt 1
+2026-07-21 10:51:44 | INFO    | Validation result for attempt 1 | Passed: False | Score: 0.470 | Threshold: 0.750
+2026-07-21 10:51:44 | INFO    | Generation attempt 2 of 3
+2026-07-21 10:51:58 | INFO    | LLM generation completed in 14.133s for attempt 2
+2026-07-21 10:51:58 | INFO    | Validation result for attempt 2 | Passed: False | Score: 0.470 | Threshold: 0.750
+2026-07-21 10:51:58 | INFO    | Generation attempt 3 of 3
+2026-07-21 10:52:12 | INFO    | LLM generation completed in 14.168s for attempt 3
+2026-07-21 10:52:12 | INFO    | Validation result for attempt 3 | Passed: False | Score: 0.470 | Threshold: 0.750
+2026-07-21 10:52:12 | INFO    | Memory Window: [{'type': 'human', 'content': 'What is OCR?'}, {'type': 'ai', 'content': 'OCR — Optical Character Recognition: converting images of text into searchable text.'}, {'type': 'human', 'content': 'What is OCR ?'}, {'type': 'ai', 'content': 'OCR — Optical Character Recognition: converting images of text into searchable text.'}]
+2026-07-21 10:52:12 | INFO    | Answer generated successfully (Validation: {'passed': False, 'score': 0.47, 'attempts': 3, 'threshold': 0.75})
+2026-07-21 10:52:12 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 40.96s
+2026-07-21 10:52:50 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 45
+2026-07-21 10:52:50 | INFO    | Question: give me table of the content 
+2026-07-21 10:52:50 | INFO    | Hybrid search retrieved 14 chunks in 0.065s
+2026-07-21 10:52:54 | INFO    | Reranking selected top 3 chunks in 3.293s. Scores: -3.362 (3.35%), -4.342 (1.28%), -4.415 (1.19%). Page(s): 2, 16, 6
+2026-07-21 10:52:54 | INFO    | Generation attempt 1 of 3
+2026-07-21 10:54:02 | INFO    | LLM generation completed in 68.532s for attempt 1
+2026-07-21 10:54:03 | INFO    | Validation result for attempt 1 | Passed: False | Score: 0.660 | Threshold: 0.750
+2026-07-21 10:54:03 | INFO    | Generation attempt 2 of 3
+2026-07-21 10:54:42 | INFO    | LLM generation completed in 39.874s for attempt 2
+2026-07-21 10:54:43 | INFO    | Validation result for attempt 2 | Passed: False | Score: 0.424 | Threshold: 0.750
+2026-07-21 10:54:43 | INFO    | Generation attempt 3 of 3
+2026-07-21 10:56:15 | INFO    | LLM generation completed in 92.286s for attempt 3
+2026-07-21 10:56:15 | INFO    | Validation result for attempt 3 | Passed: False | Score: 0.424 | Threshold: 0.750
+2026-07-21 10:56:15 | INFO    | Memory Window: [{'type': 'human', 'content': 'What is OCR?'}, {'type': 'ai', 'content': 'OCR — Optical Character Recognition: converting images of text into searchable text.'}, {'type': 'human', 'content': 'What is OCR ?'}, {'type': 'ai', 'content': 'OCR — Optical Character Recognition: converting images of text into searchable text.'}, {'type': 'human', 'content': 'give me table of the content '}, {'type': 'ai', 'content': "Here's a table of contents based on the provided document:"}]
+2026-07-21 10:56:15 | INFO    | Answer generated successfully (Validation: {'passed': False, 'score': 0.424, 'attempts': 3, 'threshold': 0.75})
+2026-07-21 10:56:15 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 204.70s
+2026-07-21 10:57:20 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 10:57:20 | INFO    | ============================================================
+2026-07-21 10:57:20 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 10:57:20 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 10:57:20 | INFO    | ============================================================
+2026-07-21 10:57:57 | INFO    | REQUEST  | GET /api/history | IP: 127.0.0.1 | Body: 0
+2026-07-21 10:57:57 | INFO    | RESPONSE | GET /api/history | Status: 200 | Duration: 0.00s
+2026-07-21 11:03:44 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 29
+2026-07-21 11:03:44 | INFO    | Question: what is ocr ?
+2026-07-21 11:03:44 | INFO    | Hybrid search retrieved 16 chunks in 0.064s
+2026-07-21 11:03:45 | INFO    | Reranking selected top 3 chunks in 1.353s. Scores: 2.842 (94.49%), 1.904 (87.04%), -5.652 (0.35%). Page(s): 19, 19, 9
+2026-07-21 11:03:46 | INFO    | Generation attempt 1 of 3
+2026-07-21 11:04:26 | INFO    | LLM generation completed in 40.601s for attempt 1
+2026-07-21 11:04:26 | INFO    | Validation result for attempt 1 | Passed: True | Score: 0.470 | Threshold: 0.450
+2026-07-21 11:04:26 | INFO    | Memory Window: [{'type': 'human', 'content': 'what is ocr ?'}, {'type': 'ai', 'content': 'OCR — Optical Character Recognition: converting images of text into searchable text.'}]
+2026-07-21 11:04:26 | INFO    | Answer generated successfully (Validation: {'passed': True, 'score': 0.47, 'attempts': 1, 'threshold': 0.45})
+2026-07-21 11:04:26 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 42.40s
+2026-07-21 11:05:34 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 11:05:34 | INFO    | ============================================================
+2026-07-21 11:05:34 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 11:05:34 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 11:05:34 | INFO    | ============================================================
+2026-07-21 11:05:45 | INFO    | REQUEST  | GET /api/history | IP: 127.0.0.1 | Body: 0
+2026-07-21 11:05:45 | INFO    | RESPONSE | GET /api/history | Status: 200 | Duration: 0.00s
+2026-07-21 11:05:56 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 29
+2026-07-21 11:05:56 | INFO    | Question: What is ocr ?
+2026-07-21 11:05:57 | INFO    | Hybrid search retrieved 16 chunks in 0.087s
+2026-07-21 11:05:59 | INFO    | Reranking selected top 3 chunks in 1.990s. Scores: 2.842 (94.49%), 1.904 (87.04%), -5.652 (0.35%). Page(s): 19, 19, 9
+2026-07-21 11:05:59 | INFO    | Generation attempt 1 of 3
+2026-07-21 11:06:09 | INFO    | LLM generation completed in 9.850s for attempt 1
+2026-07-21 11:06:09 | INFO    | Validation result for attempt 1 | Passed: True | Score: 0.470 | Threshold: 0.450
+2026-07-21 11:06:09 | INFO    | Memory Window: [{'type': 'human', 'content': 'What is ocr ?'}, {'type': 'ai', 'content': 'OCR — Optical Character Recognition: converting images of text into searchable text.'}]
+2026-07-21 11:06:09 | INFO    | Answer generated successfully (Validation: {'passed': True, 'score': 0.47, 'attempts': 1, 'threshold': 0.45})
+2026-07-21 11:06:09 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 12.27s
+2026-07-21 11:07:28 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 11:07:28 | INFO    | ============================================================
+2026-07-21 11:07:28 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 11:07:28 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 11:07:28 | INFO    | ============================================================
+2026-07-21 11:09:28 | INFO    | REQUEST  | GET /api/history | IP: 127.0.0.1 | Body: 0
+2026-07-21 11:09:28 | INFO    | RESPONSE | GET /api/history | Status: 200 | Duration: 0.00s
+2026-07-21 11:09:37 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 29
+2026-07-21 11:09:37 | INFO    | Question: What is OCR ?
+2026-07-21 11:09:37 | INFO    | Hybrid search retrieved 14 chunks in 0.049s
+2026-07-21 11:09:38 | INFO    | Reranking selected top 3 chunks in 1.415s. Scores: 2.842 (94.49%), 1.904 (87.04%), -5.652 (0.35%). Page(s): 19, 19, 9
+2026-07-21 11:09:39 | INFO    | Generation attempt 1 of 3
+2026-07-21 11:09:44 | INFO    | LLM generation completed in 5.720s for attempt 1
+2026-07-21 11:09:44 | INFO    | Validation result for attempt 1 | Passed: True | Score: 0.470 | Threshold: 0.450
+2026-07-21 11:09:44 | INFO    | Memory Window: [{'type': 'human', 'content': 'What is OCR ?'}, {'type': 'ai', 'content': 'OCR — Optical Character Recognition: converting images of text into searchable text.'}]
+2026-07-21 11:09:44 | INFO    | Answer generated successfully (Validation: {'passed': True, 'score': 0.47, 'attempts': 1, 'threshold': 0.45})
+2026-07-21 11:09:44 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 7.54s
+2026-07-21 11:11:36 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 11:11:36 | INFO    | ============================================================
+2026-07-21 11:11:36 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 11:11:36 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 11:11:36 | INFO    | ============================================================
+2026-07-21 11:12:18 | INFO    | REQUEST  | GET /api/history | IP: 127.0.0.1 | Body: 0
+2026-07-21 11:12:18 | INFO    | RESPONSE | GET /api/history | Status: 200 | Duration: 0.00s
+2026-07-21 11:12:54 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 11:12:54 | INFO    | ============================================================
+2026-07-21 11:12:54 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 11:12:54 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 11:12:54 | INFO    | ============================================================
+2026-07-21 11:15:33 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 61
+2026-07-21 11:15:33 | INFO    | Question: tell me about  Evolution of Digital Documents
+2026-07-21 11:15:33 | INFO    | Hybrid search retrieved 12 chunks in 0.047s
+2026-07-21 11:15:34 | INFO    | Reranking selected top 3 chunks in 1.062s. Scores: 5.277 (99.49%), -7.451 (0.06%), -7.767 (0.04%). Page(s): 14, 14, 14
+2026-07-21 11:15:34 | INFO    | Generation attempt 1 of 3
+2026-07-21 11:16:25 | INFO    | LLM generation completed in 50.862s for attempt 1
+2026-07-21 11:16:25 | INFO    | Validation result for attempt 1 | Passed: True | Score: 0.838 | Threshold: 0.450
+2026-07-21 11:16:25 | INFO    | Total Token Usage | Input: 1187 | Output: 106 | Total: 1293
+2026-07-21 11:16:25 | INFO    | Memory Window: [{'type': 'human', 'content': 'tell me about  Evolution of Digital Documents'}, {'type': 'ai', 'content': 'The chapter discusses the evolution of digital documents, linking it to the development of personal computing and the internet. Initially, documents were simple text files with minimal formatting. The rise of graphical user interfaces in the late 1980s and early 1990s increased the demand for richer document formats. Adobe introduced PDF in 1993 as a solution for consistent document viewing across different systems.'}]
+2026-07-21 11:16:25 | INFO    | Answer generated successfully (Validation: {'passed': True, 'score': 0.838, 'attempts': 1, 'threshold': 0.45})
+2026-07-21 11:16:25 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 52.34s
+2026-07-21 11:19:40 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 69
+2026-07-21 11:19:40 | INFO    | Question: what is Document Processing in Software Development ?
+2026-07-21 11:19:40 | INFO    | Hybrid search retrieved 13 chunks in 0.065s
+2026-07-21 11:19:44 | INFO    | Reranking selected top 3 chunks in 3.269s. Scores: 6.620 (99.87%), -3.314 (3.51%), -4.608 (0.99%). Page(s): 16, 1, 3
+2026-07-21 11:19:44 | INFO    | Generation attempt 1 of 3
+2026-07-21 11:20:21 | INFO    | LLM generation completed in 36.461s for attempt 1
+2026-07-21 11:20:21 | INFO    | Validation result for attempt 1 | Passed: True | Score: 0.789 | Threshold: 0.450
+2026-07-21 11:20:21 | INFO    | Total Token Usage | Input: 1196 | Output: 105 | Total: 1301
+2026-07-21 11:20:21 | INFO    | Memory Window: [{'type': 'human', 'content': 'tell me about  Evolution of Digital Documents'}, {'type': 'ai', 'content': 'The chapter discusses the evolution of digital documents, linking it to the development of personal computing and the internet. Initially, documents were simple text files with minimal formatting. The rise of graphical user interfaces in the late 1980s and early 1990s increased the demand for richer document formats. Adobe introduced PDF in 1993 as a solution for consistent document viewing across different systems.'}, {'type': 'human', 'content': 'what is Document Processing in Software Development ?'}, {'type': 'ai', 'content': "Document processing in software development is the process of extracting data and information from digital documents, primarily PDFs, to be used within software applications. It’s a common requirement across domains like web applications (generating invoices), enterprise systems (data extraction for databases), and mobile apps (rendering PDFs). The challenge lies in PDF's complex format with numerous objects and absolute text positioning."}]
+2026-07-21 11:20:21 | INFO    | Answer generated successfully (Validation: {'passed': True, 'score': 0.789, 'attempts': 1, 'threshold': 0.45})
+2026-07-21 11:20:21 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 40.26s
+2026-07-21 12:09:50 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 12:09:50 | INFO    | ============================================================
+2026-07-21 12:09:50 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 12:09:50 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 12:09:50 | INFO    | ============================================================
+2026-07-21 12:10:13 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 12:10:13 | INFO    | ============================================================
+2026-07-21 12:10:13 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 12:10:13 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 12:10:13 | INFO    | ============================================================
+2026-07-21 12:10:13 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 28
+2026-07-21 12:10:13 | INFO    | Question: What is OCR?
+2026-07-21 12:10:36 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 12:10:36 | INFO    | ============================================================
+2026-07-21 12:10:36 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 12:10:36 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 12:10:36 | INFO    | ============================================================
+2026-07-21 12:10:36 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 28
+2026-07-21 12:10:36 | INFO    | Question: What is OCR?
+2026-07-21 12:10:36 | INFO    | Hybrid search retrieved 16 chunks in 0.055s
+2026-07-21 12:10:37 | INFO    | Reranking selected top 3 chunks in 1.105s. Scores: 2.842 (94.49%), 1.904 (87.04%), -5.652 (0.35%). Page(s): 19, 19, 9
+2026-07-21 12:10:37 | INFO    | Generation attempt 1 of 3
+2026-07-21 12:11:09 | INFO    | LLM generation completed in 31.812s for attempt 1
+2026-07-21 12:11:09 | INFO    | Validation result for attempt 1 | Passed: True | Score: 100.0 | Threshold: 65.0
+2026-07-21 12:11:09 | INFO    | Total Token Usage | Input: 1053 | Output: 35 | Total: 1088
+2026-07-21 12:11:09 | INFO    | Memory Window: [{'type': 'human', 'content': 'What is OCR?'}, {'type': 'ai', 'content': 'OCR — Optical Character Recognition: converting images of text into searchable text.'}]
+2026-07-21 12:11:09 | INFO    | Answer generated successfully (Validation: {'passed': True, 'score': 100.0, 'attempts': 1, 'threshold': 65.0})
+2026-07-21 12:11:09 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 33.00s
+2026-07-21 12:11:16 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 69
+2026-07-21 12:11:16 | INFO    | Question: what is Document Processing in Software Development ?
+2026-07-21 12:11:16 | INFO    | Hybrid search retrieved 13 chunks in 0.027s
+2026-07-21 12:11:18 | INFO    | Reranking selected top 3 chunks in 1.306s. Scores: 6.620 (99.87%), -3.314 (3.51%), -4.608 (0.99%). Page(s): 16, 1, 3
+2026-07-21 12:11:18 | INFO    | Generation attempt 1 of 3
+2026-07-21 12:11:46 | INFO    | LLM generation completed in 28.506s for attempt 1
+2026-07-21 12:11:46 | INFO    | Validation result for attempt 1 | Passed: True | Score: 66.8 | Threshold: 65.0
+2026-07-21 12:11:46 | INFO    | Total Token Usage | Input: 1123 | Output: 68 | Total: 1191
+2026-07-21 12:11:46 | INFO    | Memory Window: [{'type': 'human', 'content': 'What is OCR?'}, {'type': 'ai', 'content': 'OCR — Optical Character Recognition: converting images of text into searchable text.'}, {'type': 'human', 'content': 'what is Document Processing in Software Development ?'}, {'type': 'ai', 'content': 'Document processing in software development refers to the process of handling PDF files within software applications. This includes generating invoices, reports, and receipts in PDF format, processing incoming PDFs for data extraction, and rendering PDFs on various screen sizes.'}]
+2026-07-21 12:11:46 | INFO    | Answer generated successfully (Validation: {'passed': True, 'score': 66.8, 'attempts': 1, 'threshold': 65.0})
+2026-07-21 12:11:46 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 29.87s
+2026-07-21 12:12:57 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 45
+2026-07-21 12:12:57 | INFO    | Question: which are Glossary of Terms ?
+2026-07-21 12:12:57 | INFO    | Hybrid search retrieved 14 chunks in 0.017s
+2026-07-21 12:13:01 | INFO    | Reranking selected top 3 chunks in 3.755s. Scores: 2.353 (91.32%), -4.877 (0.76%), -10.524 (0.00%). Page(s): 19, 2, 4
+2026-07-21 12:13:01 | INFO    | Generation attempt 1 of 3
+2026-07-21 12:13:28 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 12:13:28 | INFO    | ============================================================
+2026-07-21 12:13:28 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 12:13:28 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 12:13:28 | INFO    | ============================================================
+2026-07-21 12:16:44 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 12:16:44 | INFO    | ============================================================
+2026-07-21 12:16:44 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 12:16:44 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 12:16:44 | INFO    | ============================================================
+2026-07-21 12:17:16 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 45
+2026-07-21 12:17:16 | INFO    | Question: which are Glossary of Terms ?
+2026-07-21 12:17:16 | INFO    | Hybrid search retrieved 14 chunks in 0.389s
+2026-07-21 12:17:19 | INFO    | Reranking selected top 3 chunks in 2.674s. Scores: 2.353 (91.32%), -4.877 (0.76%), -10.524 (0.00%). Page(s): 19, 2, 4
+2026-07-21 12:17:19 | INFO    | Generation attempt 1 of 3
+2026-07-21 12:18:05 | INFO    | LLM generation completed in 45.963s for attempt 1
+2026-07-21 12:18:05 | INFO    | Validation result for attempt 1 | Passed: True | Score: 71.1 | Threshold: 65.0
+2026-07-21 12:18:05 | INFO    | Total Token Usage | Input: 1153 | Output: 310 | Total: 1463
+2026-07-21 12:18:05 | INFO    | Memory Window: [{'type': 'human', 'content': 'which are Glossary of Terms ?'}, {'type': 'ai', 'content': 'The glossary defines 8 terms:'}]
+2026-07-21 12:18:05 | INFO    | Answer generated successfully (Validation: {'passed': True, 'score': 71.1, 'attempts': 1, 'threshold': 65.0})
+2026-07-21 12:18:05 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 49.06s
+2026-07-21 12:22:03 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 12:22:03 | INFO    | ============================================================
+2026-07-21 12:22:03 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 12:22:03 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 12:22:03 | INFO    | ============================================================
+2026-07-21 12:23:08 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 12:23:08 | INFO    | ============================================================
+2026-07-21 12:23:08 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 12:23:08 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 12:23:08 | INFO    | ============================================================
+2026-07-21 12:26:22 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 12:26:22 | INFO    | ============================================================
+2026-07-21 12:26:22 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 12:26:22 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 12:26:22 | INFO    | ============================================================
+2026-07-21 13:14:03 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 13:14:03 | INFO    | ============================================================
+2026-07-21 13:14:03 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 13:14:03 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 13:14:03 | INFO    | ============================================================
+2026-07-21 13:21:43 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 13:21:43 | INFO    | ============================================================
+2026-07-21 13:21:43 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 13:21:43 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 13:21:43 | INFO    | ============================================================
+2026-07-21 13:23:16 | INFO    | REQUEST  | GET /api/history | IP: 127.0.0.1 | Body: 0
+2026-07-21 13:23:16 | INFO    | RESPONSE | GET /api/history | Status: 200 | Duration: 0.00s
+2026-07-21 13:23:18 | INFO    | REQUEST  | POST /api/ask | IP: 127.0.0.1 | Body: 64
+2026-07-21 13:23:18 | INFO    | Question: tell me about The Evolution of Digital Documents
+2026-07-21 13:23:18 | INFO    | Hybrid search retrieved 12 chunks in 0.175s
+2026-07-21 13:23:20 | INFO    | Reranking selected top 3 chunks in 2.624s. Scores: 5.482 (99.59%), -6.663 (0.13%), -7.043 (0.09%). Page(s): 14, 14, 14
+2026-07-21 13:23:20 | INFO    | Generation attempt 1 of 3
+2026-07-21 13:24:04 | INFO    | LLM generation completed in 43.244s for attempt 1
+2026-07-21 13:24:04 | INFO    | Validation result for attempt 1 | Passed: True | Score: 67.8 | Threshold: 65.0
+2026-07-21 13:24:04 | INFO    | Total Token Usage | Input: 1065 | Output: 184 | Total: 1249
+2026-07-21 13:24:04 | INFO    | Memory Window: [{'type': 'human', 'content': 'tell me about The Evolution of Digital Documents'}, {'type': 'ai', 'content': 'The Evolution of Digital Documents section details how digital documents evolved from simple text files to richer formats, driven by the rise of graphical user interfaces and internet expansion. Initially, documents were minimal, but with the increasing need for formatting in the late 1980s and early 1990s, formats like PDF emerged to ensure consistent appearance across different systems.'}]
+2026-07-21 13:24:04 | INFO    | Answer generated successfully (Validation: {'passed': True, 'score': 67.8, 'attempts': 1, 'threshold': 65.0})
+2026-07-21 13:24:04 | INFO    | RESPONSE | POST /api/ask | Status: 200 | Duration: 46.09s
+2026-07-21 13:25:42 | INFO    | Loaded FAISS index and initialized BM25 retriever from local directory 'faiss_index_local'
+2026-07-21 13:25:42 | INFO    | ============================================================
+2026-07-21 13:25:42 | INFO    | SERVER STARTED | Smart PDF Q&A Bot | http://localhost:5000
+2026-07-21 13:25:42 | INFO    | Active PDF: sample-20-page-pdf-a4-size.pdf
+2026-07-21 13:25:42 | INFO    | ============================================================

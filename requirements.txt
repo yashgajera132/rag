@@ -1,5 +1,6 @@
 langchain
 langchain-groq
+langchain-ollama
 langchain-community
 langchain-huggingface
 langchain-text-splitters
@@ -12,3 +13,4 @@ streamlit
 requests
 sentence-transformers
 rank_bm25
+rapidfuzz

@@ -128,6 +128,17 @@ st.markdown("""
 # ---------- Session State ----------
 if "messages" not in st.session_state:
     st.session_state.messages = []
+    try:
+        response = requests.get(f"{FLASK_URL}/api/history", timeout=5)
+        if response.status_code == 200:
+            hist_data = response.json()
+            st.session_state.messages = hist_data.get("history", [])
+            pdf_status = hist_data.get("pdf_status", {})
+            st.session_state.pdf_filename = pdf_status.get("filename", config.DEFAULT_PDF)
+            st.session_state.pdf_uploaded = pdf_status.get("uploaded", True)
+    except Exception:
+        pass
+
 if "pdf_uploaded" not in st.session_state:
     st.session_state.pdf_uploaded = True
 if "pdf_filename" not in st.session_state:
@@ -220,11 +231,21 @@ else:
         else:
             with st.chat_message("assistant", avatar="🤖"):
                 st.write(msg["content"])
-                if msg.get("sources"):
-                    with st.expander("📚 Retrieved Source Chunks"):
-                        for i, src in enumerate(msg["sources"], 1):
-                            st.markdown(f"**Source Chunk #{i} (Page {src['page']})**")
-                            st.caption(src["content"])
+                # Render structured items if present
+                structured_items = msg.get("structured_items", [])
+                if structured_items:
+                    st.markdown("---")
+                    for item in structured_items:
+                        if "term" in item and "definition" in item:
+                            st.markdown(f"- **{item['term']}** — {item['definition']}")
+                        else:
+                            st.markdown(f"- {' | '.join(str(v) for v in item.values())}")
+
+                # if msg.get("sources"):
+                #     with st.expander("📚 Retrieved Source Chunks"):
+                #         for i, src in enumerate(msg["sources"], 1):
+                #             st.markdown(f"**Source Chunk #{i} (Page {src['page']})**")
+                #             st.caption(src["content"])
 
     # Chat input
     if question := st.chat_input("Ask a question about your PDF..."):
@@ -246,20 +267,34 @@ else:
                     if response.status_code == 200:
                         data = response.json()
                         answer = data["answer"]
+                        structured_items = data.get("structured_items", [])
                         sources = data.get("sources", [])
+                        val_data = data.get("validation", {})
 
                         st.write(answer)
-                        
-                        if sources:
-                            with st.expander("📚 Retrieved Source Chunks"):
-                                for i, src in enumerate(sources, 1):
-                                    st.markdown(f"**Source Chunk #{i} (Page {src['page']})**")
-                                    st.caption(src["content"])
+
+                        # Render structured items (lists, glossaries, tables)
+                        if structured_items:
+                            st.markdown("---")
+                            for item in structured_items:
+                                if "term" in item and "definition" in item:
+                                    st.markdown(f"- **{item['term']}** — {item['definition']}")
+                                else:
+                                    st.markdown(f"- {' | '.join(str(v) for v in item.values())}")
+
+
+
+                        # if sources:
+                        #     with st.expander("📚 Retrieved Source Chunks"):
+                        #         for i, src in enumerate(sources, 1):
+                        #             st.markdown(f"**Source Chunk #{i} (Page {src['page']})**")
+                        #             st.caption(src["content"])
 
                         # Save to session
                         st.session_state.messages.append({
                             "role": "assistant",
                             "content": answer,
+                            "structured_items": structured_items,
                             "sources": sources,
                         })
                     else:

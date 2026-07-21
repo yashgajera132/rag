@@ -9,7 +9,7 @@ load_dotenv()
 
 # --- Model Configurations ---
 # LLM Model (Groq)
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma3:4b")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL")
 
 # Embedding Model (HuggingFace)
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
@@ -28,8 +28,16 @@ MEMORY_WINDOW_SIZE = 3
 FAISS_INDEX_DIR = "faiss_index_local"
 DEFAULT_PDF = "sample-20-page-pdf-a4-size.pdf"
 UPLOAD_FOLDER = "uploads"
+LOGS_DIR = "logs"
 
 # --- Server Configurations ---
 FLASK_HOST = "localhost"
 FLASK_PORT = 5000
 FLASK_URL = f"http://{FLASK_HOST}:{FLASK_PORT}"
+
+# --- Validation Settings ---
+VALIDATION_THRESHOLD = 65.0
+VALIDATION_MAX_ATTEMPTS = 3
+
+
+
